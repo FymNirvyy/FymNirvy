@@ -114,9 +114,7 @@ span {
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  50% { opacity: 0; }
 }
 
 /* DISCORD */
@@ -210,6 +208,61 @@ span {
   border: 1px solid #9ca3af;
 }
 
+/* SKRIPT COMMISSIONS / MEDAL CLIPS */
+.commissions {
+  padding: 100px 8%;
+  background-color: #0f0f0f;
+}
+
+.commissions .section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.commissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.commission-card {
+  background: #111;
+  border: 1px solid #dc2626;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  transition: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.commission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.5);
+}
+
+.commission-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+}
+
+.commission-card iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem;
+  border: 1px solid #dc2626;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.commission-card iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .home {
@@ -231,5 +284,14 @@ span {
 
   .discord {
     font-size: 1.4rem;
+  }
+
+  .positions-grid,
+  .commissions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commission-card iframe {
+    height: 250px;
   }
 }

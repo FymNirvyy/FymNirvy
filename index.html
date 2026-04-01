@@ -60,7 +60,6 @@
     <h2 class="section-title">My <span>Positions</span></h2>
 
     <div class="positions-grid">
-        <!-- RESIGNED -->
         <div class="position-card">
             <div class="card-header">
                 <h3>Plugin Mart</h3>
@@ -70,7 +69,6 @@
             <p class="members"><i class="fa-solid fa-users"></i> 2,900+ Members</p>
         </div>
 
-        <!-- NEW -->
         <div class="position-card">
             <div class="card-header">
                 <h3>Ghosts Skripts</h3>
@@ -89,7 +87,6 @@
             <p class="members"><i class="fa-solid fa-users"></i> 100+ Members</p>
         </div>
 
-        <!-- EXISTING -->
         <div class="position-card">
             <div class="card-header">
                 <h3>Synplexity</h3>
@@ -125,17 +122,15 @@
             <p class="role">Developer</p>
             <p class="members"><i class="fa-solid fa-users"></i> 700+ Members</p>
         </div>
-
     </div>
 </section>
 
 <!-- COMMISSIONS / MEDAL CLIPS -->
 <section class="commissions" id="commissions">
-    <h2 class="section-title">My <span>Skript Commissions</span></h2>
+    <h2 class="section-title">My <span>Skript Commissions & Clips</span></h2>
 
     <div class="commissions-grid">
 
-        <!-- RADIANT SMP PLUGIN -->
         <div class="commission-card">
             <h3>Radiant SMP Plugin</h3>
             <iframe 
@@ -145,7 +140,6 @@
                 title="Radiant SMP Plugin Clip"></iframe>
         </div>
 
-        <!-- LIMITLESS CUSTOM ITEM -->
         <div class="commission-card">
             <h3>Limitless Custom Item</h3>
             <iframe 
@@ -155,7 +149,6 @@
                 title="Limitless Custom Item Clip"></iframe>
         </div>
 
-        <!-- REROLLERS -->
         <div class="commission-card">
             <h3>Rerollers</h3>
             <iframe 
@@ -167,6 +160,42 @@
 
     </div>
 </section>
+
+<!-- TYPING EFFECT JS -->
+<script>
+const textEl = document.querySelector(".dynamic-text");
+const cursorEl = document.querySelector(".cursor");
+
+const words = ["Skript Developer", "Minecraft Enthusiast", "Custom Plugin Creator"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+    const current = words[wordIndex];
+    if (isDeleting) {
+        textEl.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 500);
+            return;
+        }
+    } else {
+        textEl.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) {
+            isDeleting = true;
+            setTimeout(type, 1500);
+            return;
+        }
+    }
+    setTimeout(type, isDeleting ? 100 : 150);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    type();
+});
+</script>
 
 </body>
 </html>

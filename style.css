@@ -167,11 +167,6 @@ transition: 0.3s;
 position: relative;
 }
 
-/* Glitched Gens tweak (inside home) */
-.home-content .position-card {
-max-width: 320px;
-}
-
 .position-card:hover {
 transform: translateY(-6px);
 box-shadow: 0 0 25px rgba(220, 38, 38, 0.5);
